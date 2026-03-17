@@ -9,7 +9,12 @@ program spline1
 
     open(unit = 1, file = "data.in", iostat = ios, action="read")
 
-    read(1,*)n
+    if (ios /= 0) then
+        write(*,*) "Eroare la deschiderea fisierului!"
+        stop
+    end if
+
+    read(1,*) n
 
     allocate(m(n), x(n), y(n))
 
