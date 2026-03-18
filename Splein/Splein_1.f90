@@ -1,4 +1,4 @@
-program spline_1
+program spline_ord_1
     implicit none
 
     real, allocatable :: x(:), y(:), m(:)

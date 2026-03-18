@@ -1,7 +1,7 @@
-program spline1
+program spline_ord_2
     implicit none
 
-    integer :: n, i, ord
+    integer :: n, i, ord, ios
     real, allocatable :: m(:), x(:), y(:)
     real :: var, rez
 
@@ -22,7 +22,7 @@ program spline1
     read(*,*) var
 
    do i = 1, n
-        read(*,*) x(i), y(i)
+        read(1,*) x(i), y(i)
    end do
 
    do i = 1, n-1

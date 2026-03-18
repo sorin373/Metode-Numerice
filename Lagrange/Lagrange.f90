@@ -1,62 +1,48 @@
-!!!Program interpolare lagrange
-
-program lab1lagr
+program Lagrange
     implicit none
 
-    !declararea
-
-    integer :: n, i, j
-
-    real :: x(20), y(20), L(20), f(20)
+    integer :: n, i, j, ios
+    real, allocatable :: x(:), y(:), L(:), f(:)
     real :: suma, k
 
-    !citire
+    open(unit = 1, file = "data.in", iostat = ios, action="read")
 
-    print *, "Numarul de puncte n=" !write(*,*) item1, item2, ...
+    if (ios /= 0) then
+        write(*,*) "Eroare la deschiderea fisierului!"
+        stop
+    end if
 
-    read *, n!read(*,*) item 1, item2, ...
+    read(1,*) n
 
-    print *, "introduceti valoarea necunoscutei "
+    allocate(x(n), y(n), L(n), f(n))
 
-    read *, k
-
-    !citire vectori
+    write(*,*) "k: "
+    read(*,*) k
 
     do i = 1, n
-        print *, "x = "
-        read *, x(i)
-        print *, "y = "
-        read *, y(i)
+        read(1,*) x(i), y(i)
     end do
-
-    !! cond initiale
 
     suma = 0
     do i = 1, n
         f(i) = 0
     end do
 
-    ! bucla repetitiva
-
     do i = 1, n
         L(i) = 1
         do j = 1, n
             if (i /= j) then
-                L(i) = L(i) * (k-x(j))/(x(i)- x(j))
+                L(i) = L(i) * (k - x(j)) / (x(i) - x(j))
             end if
         end do
 
         f(i) = L(i)*y(i)
         suma = suma + f(i)
-
     end do
 
-    ! afisare
+    print *, "var. interpolata: ", suma
 
-    do i = 1,n
-        print *, "polinomul k = ", f(i)
-    end do
+    deallocate(x, y, L, f)
 
-    print *, "raspunsul pentrul variabila de interpolare este: ", suma
-
+    close(1)
 end program

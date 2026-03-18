@@ -90,7 +90,6 @@ program interpolare_newton
 
     do i = 1, n
         term = DD(i, 1)
-        write(*,*) term
         do j = 1, i - 1
             term = term * (xp - x(j))
         end do
