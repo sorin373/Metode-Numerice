@@ -24,6 +24,7 @@ plt.xlabel("x")
 plt.ylabel("y")
 plt.title("Generare profil aerodinamic cu ajutorul interpolarii")
 plt.grid(True)
+
 plt.axis("equal")
 plt.legend()
 plt.tight_layout()

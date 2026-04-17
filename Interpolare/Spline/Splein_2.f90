@@ -1,7 +1,7 @@
 program spline_ord_2
     implicit none
 
-    integer :: n, i, ord, ios
+    integer :: n, i, ios
     real, allocatable :: m(:), x(:), y(:)
     real :: var, rez
 

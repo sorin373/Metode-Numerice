@@ -71,7 +71,12 @@ program interpolare_newton
     rez = m(1, 1)
 
     do i = 2, n
-        c = c * (var - x(i - 1))
+        c = 1
+        
+        do j = 1, i - 1
+            c = c * (var - x(j))
+        end do
+
         rez = rez + m(1, i) * c
     end do
 

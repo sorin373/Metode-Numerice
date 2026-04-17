@@ -42,7 +42,7 @@ program spline_ord_1
     pas = (x(n) - x(1)) / real(N_GEN - 1)
 
     ! Generare a 'N_GEN' x din intervalul [x(1), x(n)]
-    do i = 1, N_GEN
+    do i = 2, N_GEN
         x_gen(i) = x(1) + real(i - 1) * pas
     end do
     

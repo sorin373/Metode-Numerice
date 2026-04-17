@@ -19,17 +19,17 @@ program derivate
 
     do i = -nmax, nmax
         x(i) = x(0) + i * h
-        y(i) = exp(x(i) ** 2) - x(i) - 1
+        y(i) = exp(x(i)**2) - x(i) - 1
     end do
 
     DD = (y(1) - y(0)) / h
-    DS = (y(0) - y(1)) / h
+    DS = (y(0) - y(-1)) / h
     DC1 = (y(1) - y(-1)) / (2 * h)
 
-    DC2 = (y(1) - 2 * y(0) + y(-1)) / (h ** 2)
+    DC2 = (y(1) - 2 * y(0) + y(-1)) / (h**2)
 
     fp = 2 * x(0) * exp(x(0)**2) - 1
-    fs = 2 * exp(x(0) ** 2) + 4 * x(0) * exp(x(0) ** 2)
+    fs = 2 * exp(x(0)**2) + 4 * x(0)**2 * exp(x(0)**2)
 
     print *, "DD = ", DD
     print *, "DS = ", DS
