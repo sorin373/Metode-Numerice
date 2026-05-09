@@ -1,3 +1,4 @@
 *.exe
 *.mod
 *.png
+.vscode

@@ -36,7 +36,7 @@ program Lagrange
             end if
         end do
 
-        f(i) = L(i)*y(i)
+        f(i) = L(i) * y(i)
         suma = suma + f(i)
     end do
 
