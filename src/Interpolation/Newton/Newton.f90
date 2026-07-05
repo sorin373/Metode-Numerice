@@ -23,7 +23,6 @@ module newton_module
     logical, allocatable :: computed(:,:)   
 
 contains
-
     recursive function DD(i, j) result(ret)
         integer, intent(in) :: i, j
         real :: ret
@@ -44,7 +43,6 @@ contains
     end function DD
 
 end module newton_module
-
 
 program interpolare_newton
     use newton_module

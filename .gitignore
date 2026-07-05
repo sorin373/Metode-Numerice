@@ -2,3 +2,5 @@
 *.mod
 *.png
 .vscode
+*.in
+*.out
