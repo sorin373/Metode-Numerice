@@ -60,7 +60,7 @@ program spline_ord_2
          end do
     end do
 
-    open(unit=2, file="intrados.out", iostat=ios, status="replace")
+    open(unit=2, file="./data/output/intrados.out", iostat=ios, status="replace")
 
     if (ios /= 0) then
         write(*,*) "Eroare la deschiderea fisierului .out!"

@@ -6,7 +6,7 @@ program spline_ord_1
     real(kind=8) :: pas, x_gen(N_GEN), y_gen(N_GEN)
     real(kind=8), allocatable :: x(:), y(:), m(:)
 
-    open(unit = 1, file = "intrados.in", iostat = ios, action="read")
+    open(unit = 1, file = "./data/input/intrados.in", iostat = ios, action="read")
 
     if (ios /= 0) then
         write(*,*) "Eroare la deschiderea fisierului .in!"
@@ -28,8 +28,8 @@ program spline_ord_1
 
     close(1)
 
-    do i = 1, n-1
-        if (x(i+1) <= x(i)) then
+    do i = 1, n - 1
+        if (x(i + 1) <= x(i)) then
             write(*,*) "Val. pentru x trebuie sa fie in ord. strict crescatoare!"
             stop
         end if
@@ -56,7 +56,7 @@ program spline_ord_1
         end do
     end do
 
-    open(unit=2, file="intrados.out", iostat=ios ,status="replace")
+    open(unit=2, file="./data/output/intrados.out", iostat=ios ,status="replace")
 
     if (ios /= 0) then
         write(*,*) "Eroare la deschiderea fisierului .out!"
